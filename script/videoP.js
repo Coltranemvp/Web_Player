@@ -30,6 +30,10 @@ const stopPlay = () => {
 };
 
 const addZero = n => n < 10 ? '0' + n : n;
+const changeValue = () => {
+    const valueVolume = videoVolume.value;
+    videoPlayer.volume = valueVolume / 100;
+}
 
     videoPlayer.addEventListener('click',togglePlay);
     videoButtonPlay.addEventListener('click', togglePlay);
@@ -58,8 +62,6 @@ const addZero = n => n < 10 ? '0' + n : n;
 
         videoPlayer.currentTime = (value * duration) / 100;
     });
-    videoVolume.addEventListener('input', () => {
-        const valueVolume = videoVolume.value;
-        videoPlayer.volume = valueVolume / 100;
-    });
-};
+    videoVolume.addEventListener('input', changeValue);
+    changeValue();
+}
