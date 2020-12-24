@@ -70,6 +70,6 @@ radioMute.addEventListener('click', () =>{
 });
   radioPInit.stop = () => {
       audio.pause();
-      changeIconPlay;
+      changeIconPlay();
   };
 };

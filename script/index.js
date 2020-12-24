@@ -14,6 +14,8 @@ const deactivationPlayer = () => {
     videoPInit.stop();
     radioPInit.stop();
     musicPInit.stop();
+   
+    
 };
 
 playerbtn.forEach((btn, i) =>  btn.addEventListener('click', ()=>{

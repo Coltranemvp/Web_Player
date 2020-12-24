@@ -13,6 +13,7 @@ const audioProgressTiming = document.querySelector('.audio-progress__timing');
 const audioTimePassed = document.querySelector('.audio-time__passed');
 const audioTimeTotal = document.querySelector('.audio-time__total');
 
+
 const playlist = ['hello', 'flow','speed'];
 let trackIndex = 0;
 
@@ -106,13 +107,20 @@ audioProgress.addEventListener('click', event => {
 
 
 musicPInit.stop = () => {
+    
+      
+        if  (audioPlayer.paused) {} else {
+        audio.classList.toggle('play'); 
+        audioButton__play.classList.toggle('fa-play');
+        audioButton__play.classList.toggle('fa-pause');
+
+        if (audioPlayer.paused){
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    } 
+    
     audioPlayer.pause();
-    
-    
-};
-
-
- 
-
-
-};
+    };
+}
