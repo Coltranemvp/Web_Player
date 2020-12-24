@@ -5,10 +5,13 @@ export const radioPInit = () => {
  const radioItem = document.querySelectorAll('.radio-item');
  const radioHeaderBig = document.querySelector('.radio-header__big');
  const radioStop = document.querySelector('.radio-stop');
+ const radioVolume = document.querySelector('.radio-volume');
+ const radioMute = document.querySelector('.radio-mute');
+ 
 
   const audio = new Audio();
   audio.type = 'audio/aac';
-
+  const prevVolume = audio.volume;
   radioStop.disable = true;
 
 const changeIconPlay = () => {
@@ -54,5 +57,16 @@ const changeIconPlay = () => {
       changeIconPlay();
     });
 
+radioVolume.addEventListener('input', ()=> {
+    audio.volume = radioVolume.value / 100;
+    audio.volume = false;
+});
+radioVolume.value =audio.volume * 50;
+
+radioMute.addEventListener('click', () =>{
+    
+       audio.muted  = !audio.muted;
+    
+});
 
 };

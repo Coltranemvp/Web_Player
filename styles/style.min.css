@@ -10,4 +10,11 @@ input.video-volume {
 .video-fullscreen{
     cursor: pointer;
 }
+input.radio-volume {
+    max-width: 1000px;
+    margin-right: 5px;
+}
+.radio-icon {
+    margin-right: 5px;
+}
 /*# sourceMappingURL=style.min.css.map */
