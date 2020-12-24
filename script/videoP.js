@@ -5,7 +5,7 @@ export const videoPInit = () => {
     const videoTimePassed = document.querySelector('.video-time__passed');
     const videoProgress = document.querySelector('.video-progress');
     const videoTimeTotal = document.querySelector('.video-time__total');
-    
+    const videoVolume = document.querySelector('.video-volume');
 const toggleIcon = () => {
     if (videoPlayer.paused){
         videoButtonPlay.classList.remove('fa-pause');
@@ -51,11 +51,15 @@ const addZero = n => n < 10 ? '0' + n : n;
         videoTimePassed.textContent = addZero(minutePassed) + ':' + addZero(secondsPassed);
         videoTimeTotal.textContent = addZero(minuteTotal) + ':' + addZero(secondsTotal); 
     });
-    
+
     videoProgress.addEventListener('change', () => {
         const duration = videoPlayer.duration;
         const value = videoProgress.value;
 
         videoPlayer.currentTime = (value * duration) / 100;
+    });
+    videoVolume.addEventListener('input', () => {
+        const valueVolume = videoVolume.value;
+        videoPlayer.volume = valueVolume / 100;
     });
 };
