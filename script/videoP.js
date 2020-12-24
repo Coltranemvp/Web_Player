@@ -69,4 +69,9 @@ const changeValue = () => {
     });
     videoVolume.addEventListener('input', changeValue);
     changeValue();
+
+ videoPInit.stop = () => {
+     videoPlayer.pause();
+     toggleIcon();
+ };
 }

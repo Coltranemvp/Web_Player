@@ -5,10 +5,14 @@ const playerbtn = document.querySelectorAll('.player-btn');
 const playerBlock = document.querySelectorAll('.player-block');
 const temp = document.querySelector('.temp');
 
+
 const deactivationPlayer = () => {
     temp.style.display = 'none';
     playerBlock.forEach(item=> item.classList.remove("active"));
     playerbtn.forEach(item=> item.classList.remove("active"));
+
+    videoPInit.stop();
+    radioPInit.stop();
 };
 
 playerbtn.forEach((btn, i) =>  btn.addEventListener('click', ()=>{
